@@ -4,12 +4,11 @@ path = require 'path'
 assert = require 'assert'
 Baba = require "../../node-babascript/lib/script"
 Client = require "../../node-babascript-client/lib/client"
-Manager = require "../lib/usermanager"
+Manager = require path.resolve 'lib', "usermanager"
 
 # server 立てて、そこをテスト対象にする
 describe 'test', ->
 
-  script = require path.resolve()
   removeClients = []
 
   beforeEach (done) ->
@@ -17,7 +16,7 @@ describe 'test', ->
     done()
 
   afterEach (done) ->
-    console.log "--ater each--"
+    console.log "--after each--"
     for c, i in removeClients
       if c?
         c.linda.io.disconnect()

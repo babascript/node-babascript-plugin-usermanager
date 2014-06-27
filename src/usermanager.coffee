@@ -10,7 +10,7 @@ module.exports = class UserManager
     socket = SocketIOClient.connect @api
     @linda = new LindaSocketIOClient().connect socket
 
-  start: (baba, next) ->
+  load: (baba, next) ->
     @parent = baba
     name = baba.id
     baba.data.users = new Users()

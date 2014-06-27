@@ -3,7 +3,8 @@ process.env.NODE_ENV = 'test'
 path = require 'path'
 Baba = require "../../node-babascript/lib/script"
 Client = require "../../node-babascript-client/lib/client"
-Manager = require "../lib/usermanager"
+Manager = require path.resolve 'lib', "usermanager"
+console.log Managers
 
 baba = new Baba "baba"
 baba.set "manager", new Manager()
